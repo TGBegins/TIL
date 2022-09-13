@@ -27,7 +27,14 @@
      - `:q` : 나오기
      - `:wq` : 저장하고 나오기
    - 참고자료 [링크](https://zeddios.tistory.com/122)
- 
+   - 비정상적으로 종료시 해결 방법
+     - vim이 비정상 종료 되었을 때 swp 파일이 생성됨.
+       -ATTENTION 문구가 뜨는 경우
+         1. 두 프로세스, 두 사람이 동시에 한 파일을 수정하는 경우
+         2. crash가 나서 vim이 비정상적으로 닫힌 경우
+     - 기존에 입력했던 내용을 복구하고 싶을 때는 `vim -r 파일명`을 입력하거나 Recovery모드로 진입
+     - 정상 종료후, swp 파일 삭제
+     - `rm .파일명.파일형식.swp` 
 #### 마크다운 문법
  * 외부 링크 추가
 ```
@@ -35,3 +42,5 @@
 적용예: [Google](https://google.com, "google link")
 ```
 Link: [Google](https://google.com, "google link")
+
+
