@@ -88,7 +88,6 @@ git log
 git status
 ```
 
-<<<<<<< HEAD
 ### 220920 git bash code
 
 - `code .` : 현재 위치를 작업폴더로 VS코드(또는 그 컴퓨터에 깔린 코딩 프로그램) 실행.
@@ -103,7 +102,7 @@ git status
   - `git branch branch명` : branch 생성.
   - `git checkout branch명` : 해당 branch로 이동.
 - `git merge branch명` : 현재 branch에 branch명을 가진 brach를 병합함.
-=======
+
 ## 2022-09-20
 
 #### 브랜치
@@ -130,4 +129,3 @@ git status
    ```
    git switch 특정 브랜치 이름
    ```
->>>>>>> refs/remotes/origin/main
