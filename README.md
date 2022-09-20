@@ -87,3 +87,18 @@ git log
 ```
 git status
 ```
+
+### 220920 git bash code
+
+- `code .` : 현재 위치를 작업폴더로 VS코드(또는 그 컴퓨터에 깔린 코딩 프로그램) 실행.
+- `git init` : 현재 디렉터리를 리포지토리(저장소)로 변경. `.git` 파일 생성.
+- `git status` : 현재 상태 표시. 변경사항이 있으면 붉은색으로 내용에 표시됨.
+- `git log` : 최근 커밋 표시.
+- `git add 파일명` : 해당 파일을 스테이징 영역으로 올림.
+- `git commit` : commit.
+  - `git commit -m "커밋코멘트"`: 코멘트와 함께 commit.
+- `git checkout 커밋ID` : 해당 시점으로 이동.
+- `git branch` : 현재 생성된 branch 확인.
+  - `git branch branch명` : branch 생성.
+  - `git checkout branch명` : 해당 branch로 이동.
+- `git merge branch명` : 현재 branch에 branch명을 가진 brach를 병합함.
