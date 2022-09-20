@@ -88,6 +88,7 @@ git log
 git status
 ```
 
+<<<<<<< HEAD
 ### 220920 git bash code
 
 - `code .` : 현재 위치를 작업폴더로 VS코드(또는 그 컴퓨터에 깔린 코딩 프로그램) 실행.
@@ -102,3 +103,31 @@ git status
   - `git branch branch명` : branch 생성.
   - `git checkout branch명` : 해당 branch로 이동.
 - `git merge branch명` : 현재 branch에 branch명을 가진 brach를 병합함.
+=======
+## 2022-09-20
+
+#### 브랜치
+
+- 정의 : A branch in Git is simply a lightweight movable pointer to one of these commits.
+- 브랜치는 특정한 목표를 가지고 하나의 코드를 수정할 때 주로 만듬
+  - 이슈 하나당 브랜치 하나를 주로 만듬
+
+##### 명령어
+
+1. 브랜치 목록 보기
+   ```
+   git branch
+   ```
+2. 브랜치 생성하기
+   ```
+   git branch 생성하고자하는 브랜치 이름
+   ```
+3. 특정 브랜치로 전환하기
+   ```
+   git checkout 특정 브랜치 이름
+   ```
+   or
+   ```
+   git switch 특정 브랜치 이름
+   ```
+>>>>>>> refs/remotes/origin/main
