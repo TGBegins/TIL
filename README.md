@@ -22,6 +22,8 @@
 
 #### vim 사용법
 
+- vim으로 파일 만들기/파일 편집하기
+  - `vim 파일명.확장자명`
 - 명령 모드와 입력 모드
   - vim 에디터를 열 때는 명령 모드로 진입함
   - 명령 모드에서는 입력이 불가능.
@@ -129,6 +131,10 @@ git status
    ```
    git switch 특정 브랜치 이름
    ```
+4. 브랜치 생성과 동시에 전환하기
+   ```
+   git checkout -b 브랜치이름
+   ```
 
 ## 2022-09-27
 
@@ -136,7 +142,7 @@ git status
 
 - 각 branch를 merge하다 보면 충돌이 생길 수 있다.
 - 이 경우는 수동으로 merge하는 파일을 수정해야 한다.
-- merge 충돌 실험
+- vim을 이용한 merge 충돌 실험
   1.  `git init`으로 저장소를 지정(main)
   2.  `vim test.txt`로 테스트 파일 생성
   3.  `git add text.txt` , `git commit -m "커밋 메시지"`로 커밋 생성
