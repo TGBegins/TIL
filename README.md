@@ -129,3 +129,27 @@ git status
    ```
    git switch 특정 브랜치 이름
    ```
+
+## 2022-09-27
+
+#### branch를 merge하는 도중 충돌 해결
+
+- 각 branch를 merge하다 보면 충돌이 생길 수 있다.
+- 이 경우는 수동으로 merge하는 파일을 수정해야 한다.
+- merge 충돌 실험
+  - 1. `git init`으로 저장소를 지정(main)
+  - 2. `vim test.txt`로 테스트 파일 생성
+  - 3. `git add text.txt` , `git commit -m "커밋 메시지"`로 커밋 생성
+  - 4. `git branch`로 잘 생성되었는지 확인
+  - 5. `git branch feature-A`로 새 branch 생성
+  - 6. `git checkout feature-A`로 branch 전환
+  - 7. `vim test.txt`로 테스트 파일 내용 변경
+  - 8. 3,4번 항목 반복
+  - 9. `git checkout main`으로 main branch로 돌아옴
+  - 10. `git branch feature-B`로 새 branch 생성
+  - 11. `git checkout feature-B`로 branch 전환
+  - 12. `vim test.txt`로 테스트 파일 내용을 변경하되 feature-A와 동일한 부분을 다르게 변경.
+  - 13. 3,4번 항목 반복
+  - 14. 현재 feature-B 에 checkout 되어 있는 상태에서 `git merge feature-A`로 merge
+  - 15. 충돌이 일어났다는 메시지가 뜬 걸 확인하고 `vim test.txt`로 충돌 부분을 확인
+  - 16. 충돌부분을 수정한 후 3번 항목을 반복
