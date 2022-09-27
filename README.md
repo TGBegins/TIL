@@ -164,11 +164,41 @@ git status
 
 ### git hub를 이용한 브랜치 병합
 
-1. 클론을 만든다
+1. 클론 만들기, 혹은 이미 클론이 있다면 원격 저장소 받아오기
+
+```
+git clone 깃허브페이지
+git pull origin main
+```
+
 2. 이슈 발생
 3. 이슈에 관한 브랜치 생성
+
+```
+git branch BranchName
+```
+
 4. 해당 브랜치로 체크아웃 후 이슈 해결
-5. `git push origin 브랜치명`으로 해당 브랜치를 git hub에 업로드
-6. git hub에서 pull request로 브랜치 병합, 이때 병합되는 화살표를 잘 확인해야함
-7. `git checkout main`으로 메인 브랜치로 체크아웃
-8. `git pull origin main`
+
+```
+git checkout BranchName
+```
+
+5. 해당 브랜치를 git hub에 업로드
+
+```
+git push origin BranchName
+```
+
+6. git hub에서 pull request로 브랜치 병합, _이때 병합되는 화살표를 잘 확인해야함_
+7. 메인 브랜치로 체크아웃
+
+```
+git checkout main
+```
+
+8. 메인 브랜치에 원격저장소 받아오기
+
+```
+git pull origin main
+```
