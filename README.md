@@ -104,6 +104,8 @@ git status
   - `git branch branch명` : branch 생성.
   - `git checkout branch명` : 해당 branch로 이동.
 - `git merge branch명` : 현재 branch에 branch명을 가진 brach를 병합함.
+- `git push 저장소명 브랜치명` : 로컬 브랜치(브랜치명)를 원격저장소(저장소명)로 푸시한다.
+- `git pull 저장소명 브랜치명` : 로컬저장소에 원격저장소의 브랜치를 가져온다.
 
 ## 2022-09-20
 
