@@ -162,7 +162,7 @@ git status
   15. 충돌이 일어났다는 메시지가 뜬 걸 확인하고 `vim test.txt`로 충돌 부분을 확인
   16. 충돌부분을 수정한 후 3번 항목을 반복
 
-### git hub를 이용한 브랜치 병합
+### GitHub를 이용한 브랜치 병합
 
 1. 클론 만들기, 혹은 이미 클론이 있다면 원격 저장소 받아오기
 
@@ -184,7 +184,7 @@ git branch BranchName
 git checkout BranchName
 ```
 
-5. 해당 브랜치를 git hub에 업로드
+5. 해당 브랜치를 GitHub에 업로드
 
 ```
 git push origin BranchName
@@ -202,3 +202,29 @@ git checkout main
 ```
 git pull origin main
 ```
+
+## 2022-10-04
+
+### 브랜칭 전략
+
+- git branch를 효과적으로 나누고 관리하기 위한 전략
+
+1. `git-flow` : 브랜치를 크게 4가지로 나누어 개발하는 전략
+
+- 메인 브랜치(Main branch)
+  - Main과 develop, 두 종류의 브랜치를 보통 메인 브랜치로 사용한다.
+  - Main : 배포 가능한 상태만을 관리하는 브랜치
+  - develop : 다음에 배포할 것을 개발하는 브랜치. develop 브랜치는 통합 브랜치의 역할을 하며 평소에는 이 브랜치를 기반으로 개발을 진행한다.
+- 보조 브랜치(Supporting branch)
+  - 피처 브랜치(frature branch) 또는 토픽 브랜치(topic branch)로 불린다.
+  - 기능을 개발하는 브랜치로 develop 브랜치로부터 분기되고 기능을 다 완성할 때까지 유지하다가 완성되면 develop 브랜치로 병합한다.
+  - 보통 개발자 저장소에만 있는 브랜치이며 origin에는 push하지 않는다.
+- 릴리스 브랜치(Release branch)
+  - develop 브랜치에 이번 버전에 포함되는 기능이 병합되었다면 QA를 위해 develop 브랜치에서부터 release 브랜치를 생성하고 배포를 위한 최종적인 버그 수정 등의 개발을 수행한다.
+  - 배포 가능한 상태가 되면 main 브랜치로 병합시키고 출시된 main 브랜치에 버전 태그를 추가한다.
+  - release 브랜치에서의 버그 수정 사항은 develop 브랜치에서도 적용해주어야 한다.
+- 핫 픽스 브랜치(Hotfix branch)
+  - 배포한 버전에서 긴급하게 수정을 해야 할 필요가 있을 경우 main 브랜치에서 분기하는 브랜치
+  - hotfix 브랜치에서의 변경사항은 develop 브랜치에도 병합하여 문제가 되는 부분을 처리해주어야 한다.
+
+2.
