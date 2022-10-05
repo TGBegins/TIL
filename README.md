@@ -162,7 +162,7 @@ git status
   15. 충돌이 일어났다는 메시지가 뜬 걸 확인하고 `vim test.txt`로 충돌 부분을 확인
   16. 충돌부분을 수정한 후 3번 항목을 반복
 
-### git hub를 이용한 브랜치 병합
+### GitHub를 이용한 브랜치 병합
 
 1. 클론 만들기, 혹은 이미 클론이 있다면 원격 저장소 받아오기
 
@@ -184,7 +184,7 @@ git branch BranchName
 git checkout BranchName
 ```
 
-5. 해당 브랜치를 git hub에 업로드
+5. 해당 브랜치를 GitHub에 업로드
 
 ```
 git push origin BranchName
@@ -202,3 +202,71 @@ git checkout main
 ```
 git pull origin main
 ```
+
+## 2022-10-04
+
+### 브랜칭 전략
+
+- git branch를 효과적으로 나누고 관리하기 위한 전략
+
+1. `Git-flow` : 브랜치를 크게 4가지로 나누어 개발하는 전략
+
+- 메인 브랜치(Main branch)
+  - Main과 develop, 두 종류의 브랜치를 보통 메인 브랜치로 사용한다.
+  - Main : 배포 가능한 상태만을 관리하는 브랜치
+  - develop : 다음에 배포할 것을 개발하는 브랜치. develop 브랜치는 통합 브랜치의 역할을 하며 평소에는 이 브랜치를 기반으로 개발을 진행한다.
+- 보조 브랜치(Supporting branch)
+  - 피처 브랜치(frature branch) 또는 토픽 브랜치(topic branch)로 불린다.
+  - 기능을 개발하는 브랜치로 develop 브랜치로부터 분기되고 기능을 다 완성할 때까지 유지하다가 완성되면 develop 브랜치로 병합한다.
+  - 보통 개발자 저장소에만 있는 브랜치이며 origin에는 push하지 않는다.
+- 릴리스 브랜치(Release branch)
+  - develop 브랜치에 이번 버전에 포함되는 기능이 병합되었다면 QA를 위해 develop 브랜치에서부터 release 브랜치를 생성하고 배포를 위한 최종적인 버그 수정 등의 개발을 수행한다.
+  - 배포 가능한 상태가 되면 main 브랜치로 병합시키고 출시된 main 브랜치에 버전 태그를 추가한다.
+  - release 브랜치에서의 버그 수정 사항은 develop 브랜치에서도 적용해주어야 한다.
+- 핫 픽스 브랜치(Hotfix branch)
+  - 배포한 버전에서 긴급하게 수정을 해야 할 필요가 있을 경우 main 브랜치에서 분기하는 브랜치
+  - hotfix 브랜치에서의 변경사항은 develop 브랜치에도 병합하여 문제가 되는 부분을 처리해주어야 한다.
+
+2. `Github-flow`
+
+- `Git-flow`가 Github에서 사용하기엔 복잡하다하여 생긴 브랜칭 전략
+- 사용법
+
+  1. main 브랜치는 어느때든 배포 가능하다.
+
+  - main 브랜치는 항상 최신 상태이며 stable 상태로 product에 배포된다.
+  - main 브랜치를 사용할때는 엄격한 role에 따라 사용해야 하며 merge 하기 전 충분히 테스트를 해야 한다.
+
+  2. main에서 새로운 일을 시작하기 위해 브랜치를 만든다면 이름을 명확히 해야 한다.
+
+  - 브랜치는 항상 main 브랜치에서 만든다.
+  - `Git-flow`와 다르게 feature 브랜치나 develop 브랜치가 존재하지 않는다.
+
+  3. 원격 브랜치로 수시로 push한다.
+
+  - `Git-flow`와는 상반되는 방식
+  - 항상 원격저장소에 자신이 하고있는 일들을 올려 다른 사람들도 확인할 수 있도록 한다.
+
+  4. 피드백이나 도움이 필요할 때, 그리고 merge 준비가 완료되었을때 pull request를 생성한다.
+
+  - pull request를 통해 코드를 공유하고 리뷰받는다.
+  - merge 준비가 완료된다면 main 브랜츠로 반영을 요청한다.
+
+  5. 기능에 대한 리뷰와 논의가 끝난 후 main 브랜치로 merge 한다.
+
+  - 곧장 product로 반영이 될 기능이므로 다른 관계자와 충분한 논의 후 반영해야 한다.
+
+  6. main 브랜치로 merge되고 push되었다면 즉시 배포되어야 한다.
+
+  - main 브랜치로 merge가 발생한다면 자동으로 배포가 되도록 설정해 놓는다.
+
+3. `Gitlab flow`
+
+- feature
+  - 모든 기능 구현은 feature 브랜치에서 시작하고 feature 브랜치는 main 브랜치에서 분기되고 merge된다.
+- main
+
+  - `Gitlab flow`의 main 브랜치 역할은 `Git flow`의 develop 브랜치와 동일하다. main 브랜치는 feature 브랜치에서 병합된 기능을 테스트하고 기능에 문제가 없다면 production 브랜치로 merge한다.
+
+- production
+  - `Gitlab flow`의 production 브랜치 역할은 `Git flow`의 main 브랜치와 동일하다. 테스트가 끝난 기능을 배포하기 위한 브랜치이다.
