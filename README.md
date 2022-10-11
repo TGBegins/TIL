@@ -292,3 +292,9 @@ git pull origin main
 ### git push 시 내부에서 일어나는 일
 
 - `git push origin main`을 하면 [현재 main 브랜치를 체크아웃 하고 있다는 가정하에] 로컬 저장소에 있는 main브랜치에 있는 모든 커밋이 원격 저장소(origin)에 있는 main브랜치로 병합이 되는데, 이때 병합되는 방식은 fast-forward이다.
+
+### git push 할 때 reject된 경우
+
+1. 먼저 git pull로 원격 저장소의 특정 브랜치에 있는 커밋들을 다 로컬 저장소의 특정 브랜치로 반영한다. 그다음 충돌 사항 수정 후 push하면 reject 해결
+
+2. git push -f origin main으로 -f 옵션(또는 --force)을 달아 강제로 push해버린다. 이때 원격 저장소의 충돌 브랜치들이 사라지고 로컬 저장소의 브랜치로 덮어씌워진다.
