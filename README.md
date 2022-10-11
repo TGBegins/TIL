@@ -270,3 +270,11 @@ git pull origin main
 
 - production
   - `Gitlab flow`의 production 브랜치 역할은 `Git flow`의 main 브랜치와 동일하다. 테스트가 끝난 기능을 배포하기 위한 브랜치이다.
+
+## 2022-10-11
+
+### 깃헙 인증 방법
+
+- ID/PW 방식
+- 키 방식(공개키/개인키)
+- 토큰 방식
