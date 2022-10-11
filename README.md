@@ -270,3 +270,9 @@ git pull origin main
 
 - production
   - `Gitlab flow`의 production 브랜치 역할은 `Git flow`의 main 브랜치와 동일하다. 테스트가 끝난 기능을 배포하기 위한 브랜치이다.
+
+
+## 2022-10-11
+- 지금까지 배운 명령어 개념과 함께 복습
+  - git commit, git branch, git checkout, git checkout -b, git merge, git pull
+  - 참고 사이트 : https://violet-bora-lee.github.io/git-tutorial/
